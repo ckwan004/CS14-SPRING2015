@@ -1,0 +1,5 @@
+See main.cpp for code for the program.
+More or less I made a class to for a datatype that gives each one a unique id.
+they ids were still in the same relative positon.
+just look at the code. thus its stable :D
+ex: 9 id: 1 is still before 9 id: 2
