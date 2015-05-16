@@ -53,9 +53,9 @@ class BST {
 	}; // Node
 
 	// const Node* nil; // later nil will point to a sentinel node.
-	Node* root; 
 	int count;
 	int c_size;
+	Node * root;
 	Value holder;
 
 public:
@@ -288,48 +288,14 @@ public:
 		}
 	}
 
-	// void printBuff(int buffer[], int pathLen)
- //    {
- //    	cout << "Part 2" << endl;
- //        for(int i = pathLen - 1 ; i != -1 ; --i)
- //            cout << buffer[i] << " ";
- //        cout << endl;
- //    }
-    
- //    int calcPath(int buffer[], int pathLen)
- //    {
- //        int sum = 0;
- //        for(int i = 0 ; i < pathLen ; i++)
- //            sum = sum + buffer[i];
- //        return sum;
- //    }
-    
- //    void sumPathRecursion(Node* n, int sum, int pathLen, int buffer[])
- //    {
- //        if(n) {return;}
-
- //        buffer[pathLen] = n->value;
- //        ++pathLen;
-        
- //        if(n->left == nil && n->right == nil && calcPath(buffer, pathLen) == sum)
- //            printBuff(buffer, pathLen);
- //        sumPathRecursion(n->left, sum, pathLen, buffer);
- //        sumPathRecursion(n->right, sum, pathLen, buffer);
- //    }
-    
- //    void findSumPath(int sum, int buffer[])
- //    {
- //        sumPathRecursion(root, sum, 0, buffer);
- //    }
-
-	void printBuff(int buffer[], int pathLen)
+    void printBuff(int buffer[], int pathLen)
     {
         for(int i = pathLen - 1 ; i != -1 ; --i) {
         	cout << buffer[i] << " ";
-        }            
+        }
         cout << endl;
     }
-    
+
     int calcPathSum(int buffer[], int pathLen)
     {
         int sum = 0;
@@ -337,37 +303,37 @@ public:
         {
             sum = sum + buffer[i];
         }
-        
+
         return sum;
     }
-    
+
     void findSumPathRecursion(Node* n, int sum, int pathLen, int buffer[])
     {
         if(n == NULL)
         {
             return;
         }
-        
+
         buffer[pathLen] = n->value;
         pathLen = pathLen + 1;
-        
+
         if(n->left == NULL && n->right == NULL && calcPathSum(buffer, pathLen) == sum)
         {
             printBuff(buffer, pathLen);
         }
-        
+
         else
         {
             findSumPathRecursion(n->left, sum, pathLen, buffer);
             findSumPathRecursion(n->right, sum, pathLen, buffer);
         }
     }
-    
+
     void findSumPath1(Node* n, int sum, int buffer[])
     {
         findSumPathRecursion(n, sum, 0, buffer);
     }
-    
+
     void findSumPath(int sum, int buffer[])
     {
         findSumPath1(this->root, sum, buffer);
