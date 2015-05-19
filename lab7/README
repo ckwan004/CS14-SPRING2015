@@ -1,0 +1,4 @@
+From the plot you can come to conlusion that hash tables are superior in every way.
+That is in speed. Hash tables take up more memory than a tree would as such you would have to make the decision speed or data storage space.
+
+We should've tested for bytes each data structure took up and amount of memory each took to run.

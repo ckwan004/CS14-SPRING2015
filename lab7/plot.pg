@@ -1,0 +1,15 @@
+#!/usr/bin/gnuplot
+reset
+set terminal png
+set xdata time
+set format x ""
+set xlabel "Iterations"
+set ylabel "Milliseconds"
+set yrange [0:0.05]
+set title "Trees and Hashtables"
+set grid
+set style data linespoints
+plot "data.txt" using 1:2 title 'tree-insert' with lines, \
+"data.txt" using 1:3 title 'hash-insert' with lines, \
+"data.txt" using 1:4 title 'tree-lookup' with lines, \
+"data.txt" using 1:5 title 'hash-lookup' with lines
